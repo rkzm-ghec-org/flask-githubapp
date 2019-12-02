@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  github-app:
+    depends_on:
+      - 'smee'
+    container_name: github-app
+    build:
+      context: ./github-app
+      dockerfile: Dockerfile
+    ports:
+      - '5001:5000'
+    links:
+      - smee
+    environment:
+      GITHUBAPP_IDENTIFIER:
+      GITHUBAPP_SECRET:
+      GITHUBAPP_KEY_PATH:
+      GITHUBAPP_URL:
+      GITHUBAPP_ID:
+    volumes:
+      - bundle_data:/usr/local/bundle
+  smee:
+    container_name: smee-webhook
+    build:
+      context: ./smee-app
+      dockerfile: Dockerfile
+    environment:
+      GITHUBAPP_URL:
+volumes:
+  bundle_data:

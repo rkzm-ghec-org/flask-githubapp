@@ -1,0 +1,13 @@
+{
+    "name": "smee-app",
+    "version": "1.0.0",
+    "description": "smee app to forward webhooks to the right container",
+    "scripts": {
+        "start": "node app"
+    },
+    "author": "Dom Amato",
+    "dependencies": {
+        "express": "^4.16.3",
+        "smee-client": "^1.0.1"
+    }
+}
