@@ -16,6 +16,7 @@ We're going to develop a GitHub app that will close all opened issues with the t
 To make sure we can receive the GitHub hooks, install [ngrok](https://ngrok.com/) and run
 
 `ngrok http 5000`
+something to check sonar
 
 > We'll use the HTTPS endpoint created by ngrok as the **Webhook URL** in our Github app configuration.
 
